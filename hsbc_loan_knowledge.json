@@ -1,0 +1,199 @@
+{
+  "loan_types": [
+    {
+      "type": "Personal Loan",
+      "description": "Unsecured loan for personal expenses such as travel, education, or medical needs.",
+      "subtypes": [
+        "Standard Personal Loan",
+        "Debt Consolidation Loan",
+        "Education Loan"
+      ],
+      "interest_rate_range": "6.9% - 14.5% APR",
+      "fees": [
+        "Processing fee: 1-2% of loan amount",
+        "Late payment fee: \u00a312"
+      ],
+      "repayment_terms": "1-7 years",
+      "eligibility": [
+        "Minimum age: 18 years",
+        "UK resident",
+        "Minimum annual income: \u00a310,000",
+        "Good credit history"
+      ],
+      "required_documents": [
+        "Proof of identity",
+        "Proof of address",
+        "Proof of income",
+        "Bank statements"
+      ]
+    },
+    {
+      "type": "Home Loan",
+      "description": "Loan for purchasing, constructing, or renovating residential property.",
+      "subtypes": [
+        "First-time buyer mortgage",
+        "Remortgage",
+        "Buy-to-let mortgage"
+      ],
+      "interest_rate_range": "2.5% - 5.5% APR",
+      "fees": [
+        "Arrangement fee: \u00a3999",
+        "Valuation fee: \u00a3250"
+      ],
+      "repayment_terms": "5-30 years",
+      "eligibility": [
+        "Minimum age: 18 years",
+        "UK resident",
+        "Minimum deposit: 5-20%",
+        "Stable income",
+        "Good credit history"
+      ],
+      "required_documents": [
+        "Proof of identity",
+        "Proof of address",
+        "Proof of income",
+        "Property details",
+        "Deposit proof"
+      ]
+    },
+    {
+      "type": "Car Loan",
+      "description": "Loan for purchasing a new or used vehicle.",
+      "subtypes": [
+        "New car loan",
+        "Used car loan"
+      ],
+      "interest_rate_range": "4.9% - 9.9% APR",
+      "fees": [
+        "Processing fee: 1% of loan amount"
+      ],
+      "repayment_terms": "1-5 years",
+      "eligibility": [
+        "Minimum age: 18 years",
+        "UK resident",
+        "Minimum annual income: \u00a38,000",
+        "Good credit history"
+      ],
+      "required_documents": [
+        "Proof of identity",
+        "Proof of address",
+        "Proof of income",
+        "Vehicle details"
+      ]
+    },
+    {
+      "type": "Business Loan",
+      "description": "Loan for business expansion, working capital, or equipment purchase.",
+      "subtypes": [
+        "Small business loan",
+        "Commercial mortgage",
+        "Asset finance"
+      ],
+      "interest_rate_range": "5.5% - 12% APR",
+      "fees": [
+        "Arrangement fee: 1-2% of loan amount",
+        "Early repayment fee"
+      ],
+      "repayment_terms": "1-15 years",
+      "eligibility": [
+        "Business registered in UK",
+        "Minimum trading history: 1 year",
+        "Directors' good credit history",
+        "Business financials"
+      ],
+      "required_documents": [
+        "Business registration documents",
+        "Directors' ID and address proof",
+        "Business bank statements",
+        "Financial statements"
+      ]
+    }
+  ],
+  "application_process": [
+    "Step 1: Choose loan type and check eligibility using HSBC's online eligibility checker or at a branch.",
+    "Step 2: Prepare required documents specific to the loan type.",
+    "Step 3: Fill out the application form online, via phone, or at a branch.",
+    "Step 4: Submit documents and application. Receive confirmation email/SMS.",
+    "Step 5: HSBC reviews application, may request additional information or verification.",
+    "Step 6: Receive approval decision. If approved, review loan offer and terms.",
+    "Step 7: Sign agreement electronically or in person.",
+    "Step 8: Funds disbursed to your account or to third party (e.g., car dealer, property seller)."
+  ],
+  "common_issues": [
+    {
+      "issue": "Application rejected",
+      "causes": [
+        "Low credit score",
+        "Insufficient income",
+        "Incomplete documents"
+      ],
+      "solutions": [
+        "Check credit report and improve score",
+        "Increase income or add co-applicant",
+        "Ensure all documents are submitted"
+      ]
+    },
+    {
+      "issue": "Delayed approval",
+      "causes": [
+        "Missing documents",
+        "High application volume"
+      ],
+      "solutions": [
+        "Contact HSBC support",
+        "Submit any requested documents promptly"
+      ]
+    },
+    {
+      "issue": "High interest rate offered",
+      "causes": [
+        "Low credit score",
+        "Short repayment term"
+      ],
+      "solutions": [
+        "Negotiate with bank",
+        "Improve credit score",
+        "Choose longer repayment term"
+      ]
+    }
+  ],
+  "approval_timeline": "Typically 2-7 business days, depending on loan type and document verification.",
+  "faqs": [
+    {
+      "question": "Can I apply for an HSBC loan online?",
+      "answer": "Yes, most HSBC loans can be applied for online, by phone, or at a branch."
+    },
+    {
+      "question": "What is the minimum income required?",
+      "answer": "Minimum income requirements vary by loan type. For personal loans, typically \u00a310,000/year; for home loans, higher income and deposit required."
+    },
+    {
+      "question": "Can I prepay or close my loan early?",
+      "answer": "Yes, but early closure may incur charges. Review your loan agreement for details."
+    },
+    {
+      "question": "What happens if my loan application is rejected?",
+      "answer": "You can reapply after improving your eligibility or contact HSBC for guidance."
+    },
+    {
+      "question": "How long does it take to get a loan approved?",
+      "answer": "Approval typically takes 2-7 business days, depending on loan type and document verification."
+    },
+    {
+      "question": "What documents do I need for a home loan?",
+      "answer": "Proof of identity, address, income, property details, and deposit proof."
+    },
+    {
+      "question": "Can I get a loan if I am self-employed?",
+      "answer": "Yes, but you will need to provide business registration and financial statements."
+    },
+    {
+      "question": "What is the maximum loan amount I can get?",
+      "answer": "Depends on income, credit history, and loan type. Personal loans typically up to \u00a325,000; home loans up to 90% of property value."
+    },
+    {
+      "question": "What happens if I miss a repayment?",
+      "answer": "You may incur late fees and it can affect your credit score. Contact HSBC immediately if you expect payment issues."
+    }
+  ]
+}
