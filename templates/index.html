@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HSBC | Global Banking and Markets</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <link
+      rel="icon"
+      href="{{ url_for('static', filename='images/bank-hsbc.svg') }}"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img
+            src="{{ url_for('static', filename='images/logo.svg') }}"
+            alt="HSBC Logo"
+            height="40"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#">Personal</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Business</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Wealth</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Log In</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Banner Carousel -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" style="margin-bottom: 0;">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="{{ url_for('static', filename='images/hero.png') }}" class="hero-banner carousel-img" alt="HSBC Hero 1" />
+        </div>
+        <div class="carousel-item">
+          <img src="{{ url_for('static', filename='images/hero2.jpeg') }}" class="hero-banner carousel-img" alt="HSBC Hero 2" />
+        </div>
+        <div class="carousel-item">
+          <img src="{{ url_for('static', filename='images/hero3.jpeg') }}" class="hero-banner carousel-img" alt="HSBC Hero 3" />
+        </div>
+        <div class="carousel-item">
+          <img src="{{ url_for('static', filename='images/hero4.jpeg') }}" class="hero-banner carousel-img" alt="HSBC Hero 4" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Services Section -->
+    <section class="container my-5">
+      <div class="row text-center">
+        <div class="col-md-4">
+          <h4>Accounts</h4>
+          <p>Open and manage accounts with ease, worldwide.</p>
+        </div>
+        <div class="col-md-4">
+          <h4>Loans</h4>
+          <p>Flexible home, car, and personal loans to fit your life.</p>
+        </div>
+        <div class="col-md-4">
+          <h4>Investments</h4>
+          <p>Make smarter decisions with our investment tools.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Floating Chat Widget -->
+    <div
+      id="chat-widget"
+      style="position: fixed; bottom: 20px; right: 20px; z-index: 9999"
+    >
+      <button
+        id="chat-toggle-btn"
+        class="btn btn-danger rounded-circle"
+        style="width: 60px; height: 60px"
+        aria-label="Open or close chat"
+      >
+        💬
+      </button>
+
+      <div id="chatbot-container" style="display: none; position: fixed; bottom: 20px; right: 20px;">
+        <div id="chat-header" style="display: flex; align-items: center; justify-content: space-between; padding: 8px 12px 8px 12px; background: #d90429; color: white; border-top-left-radius: 12px; border-top-right-radius: 12px;">
+          <span style="font-weight: 600; font-size: 16px;">Ask HyBe</span>
+          <div style="display: flex; gap: 8px;">
+            <button id="clear-chat-btn" onclick="clearChat()" title="Clear Chat" style="background: white; border: none; color: #d90429; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 8px rgba(217,4,41,0.12);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d90429" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m5 6v6m4-6v6M10 10V6a2 2 0 0 1 2-2h0a2 2 0 0 1 2 2v4"/></svg>
+            </button>
+            <button id="close-chat-btn" onclick="toggleChat()" title="Close Chat" style="background: white; border: none; color: #d90429; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 2px 8px rgba(217,4,41,0.12);">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d90429" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+          </div>
+        </div>
+        <div id="chat-body"></div>
+        <div id="chat-options" style="display:none; flex-direction:column; gap:10px; align-items:flex-start; padding:16px 12px 0 12px;"></div>
+        <div id="chat-input-container">
+          <input type="text" id="chat-input" placeholder="Ask..." onkeydown="if(event.key==='Enter'){sendMessage();}" />
+          <button onclick="sendMessage()">Send</button>
+        </div>
+      </div>
+      <script src="{{ url_for('static', filename='js/chatbot.js') }}"></script>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center py-4 border-top">
+      <p class="mb-0">
+        2025 Hongkong and Shanghai Banking Corporation Limited. All rights
+        reserved.
+      </p>
+    </footer>
+    <script>
+      document.getElementById("chat-toggle-btn").addEventListener("click", function() {
+        const chatWidget = document.getElementById("chatbot-container");
+        const chatBody = document.getElementById("chat-body");
+        const chatOptions = document.getElementById("chat-options");
+        if (chatWidget.style.display === "none") {
+          chatWidget.style.display = "block";
+          // Restore chat history from localStorage
+          const savedHistory = localStorage.getItem("hsbc_chat_history");
+          if (savedHistory) {
+            chatBody.innerHTML = savedHistory;
+          } else {
+            chatBody.innerHTML = `<div class='bot-msg' style='margin-bottom:8px;'><strong>HSBC:</strong> Welcome to HSBC! How can I help you today?</div>`;
+          }
+          // Show options right after welcome message (only if no history)
+          chatOptions.innerHTML = "";
+          if (!savedHistory) {
+            chatOptions.style.display = "flex";
+            setTimeout(() => {
+              chatOptions.innerHTML = `
+                <button class='chat-option-btn' type='button' onclick='selectOption(1)'>Apply for a Loan</button>
+                <button class='chat-option-btn' type='button' onclick='selectOption(2)'>Block a Card</button>
+                <button class='chat-option-btn' type='button' onclick='selectOption(3)'>Account Statement</button>
+              `;
+            }, 50);
+          } else {
+            chatOptions.style.display = "none";
+          }
+        } else {
+          chatWidget.style.display = "none";
+          chatBody.innerHTML = "";
+          chatOptions.innerHTML = "";
+          chatOptions.style.display = "none";
+        }
+      });
+
+      function toggleChat() {
+        const chatWidget = document.getElementById("chatbot-container");
+        const chatBody = document.getElementById("chat-body");
+        const chatOptions = document.getElementById("chat-options");
+        if (chatWidget.style.display === "none" || chatWidget.style.display === "") {
+          chatWidget.style.display = "block";
+          // Restore chat history from localStorage
+          const savedHistory = localStorage.getItem("hsbc_chat_history");
+          if (savedHistory) {
+            chatBody.innerHTML = savedHistory;
+          } else {
+            chatBody.innerHTML = `<div class='bot-msg' style='margin-bottom:8px;'><strong>HSBC:</strong> Welcome to HSBC! How can I help you today?</div>`;
+          }
+          // Show options right after welcome message (only if no history)
+          chatOptions.innerHTML = "";
+          if (!savedHistory) {
+            chatOptions.style.display = "flex";
+            setTimeout(() => {
+              chatOptions.innerHTML = `
+                <button class='chat-option-btn' type='button' onclick='selectOption(1)'>Apply for a Loan</button>
+                <button class='chat-option-btn' type='button' onclick='selectOption(2)'>Block a Card</button>
+                <button class='chat-option-btn' type='button' onclick='selectOption(3)'>Account Statement</button>
+              `;
+            }, 50);
+          } else {
+            chatOptions.style.display = "none";
+          }
+        } else {
+          chatWidget.style.display = "none";
+          chatBody.innerHTML = "";
+          chatOptions.innerHTML = "";
+          chatOptions.style.display = "none";
+        }
+      }
+
+      function clearChat() {
+        const chatBody = document.getElementById("chat-body");
+        const chatOptions = document.getElementById("chat-options");
+        localStorage.removeItem("hsbc_chat_history");
+        chatBody.innerHTML = `<div class='bot-msg' style='margin-bottom:8px;'><strong>HSBC:</strong> Welcome to HSBC! How can I help you today?</div>`;
+        chatOptions.innerHTML = "";
+        chatOptions.style.display = "flex";
+        setTimeout(() => {
+          chatOptions.innerHTML = `
+            <button class='chat-option-btn' type='button' onclick='selectOption(1)'>Apply for a Loan</button>
+            <button class='chat-option-btn' type='button' onclick='selectOption(2)'>Block a Card</button>
+            <button class='chat-option-btn' type='button' onclick='selectOption(3)'>Account Statement</button>
+          `;
+        }, 50);
+      }
+
+      function selectOption(option) {
+        const chatOptions = document.getElementById("chat-options");
+        chatOptions.style.display = "none";
+        let msg = "";
+        if (option === 1) msg = "I want to apply for a loan.";
+        if (option === 2) msg = "I want to block my card.";
+        if (option === 3) msg = "I need my account statement.";
+        document.getElementById("chat-input").value = msg;
+        sendMessage();
+      }
+
+      function sendMessage() {
+        const input = document.getElementById("chat-input");
+        const chatBody = document.getElementById("chat-body");
+        const msg = input.value.trim();
+        if (!msg) return;
+
+        chatBody.innerHTML += `<div class="user-msg"><strong>You:</strong> ${msg}</div>`;
+        input.value = "";
+        chatBody.scrollTop = chatBody.scrollHeight;
+        localStorage.setItem("hsbc_chat_history", chatBody.innerHTML);
+
+        fetch("/chat", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          credentials: "include",
+          body: JSON.stringify({ message: msg })
+        })
+          .then(res => {
+            if (!res.ok) throw new Error("Bad response from server");
+            return res.json();
+          })
+          .then(data => {
+            chatBody.innerHTML += `<div class="bot-msg"><strong>HSBC:</strong> ${data.reply}</div>`;
+            chatBody.scrollTop = chatBody.scrollHeight;
+            localStorage.setItem("hsbc_chat_history", chatBody.innerHTML);
+          })
+          .catch(err => {
+            chatBody.innerHTML += `<div class="bot-msg"><strong>HSBC:</strong> Error: ${err.message}</div>`;
+            chatBody.scrollTop = chatBody.scrollHeight;
+          });
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
